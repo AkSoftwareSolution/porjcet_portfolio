@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<!-- AOS for animations -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+:root{
+  --c1:#FCF8F8;
+  --c2:#FBEFEF;
+  --c3:#F9DFDF;
+  --c4:#F5AFAF;
+  --dark:#3B1F1F;
+  --dark-bg:#1A1A1A;
+  --dark-text:#E5E5E5;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(135deg,var(--c1),var(--c2),var(--c3),var(--c4));
+  color:var(--dark);
+  transition:all .5s ease;
+}
+
+body.dark{
+  background:var(--dark-bg);
+  color:var(--dark-text);
+}
+
+a{text-decoration:none;color:inherit}
+
+header{
+  background:var(--c2);
+  padding:20px 8%;
+  position:sticky;
+  top:0;
+  box-shadow:0 4px 15px rgba(0,0,0,.08);
+  display:flex; justify-content:space-between; align-items:center;
+  transition:all .5s ease;
+}
+
+header.dark{
+  background:#222;
+}
+
+nav a{margin-left:20px; font-weight:500;}
+nav a:hover{color:var(--c4)}
+
+section{padding:80px 8%;}
+
+h2{text-align:center; margin-bottom:20px;}
+
+.hero{
+  min-height:85vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  flex-direction:column;
+}
+
+.hero h1{font-size:42px;}
+.hero span{color:var(--c4)}
+
+.btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 30px;
+  background:var(--c3);
+  border-radius:30px;
+  font-weight:600;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.btn:hover{background:var(--c4);color:#fff;}
+
+.card-box{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  margin-top:30px;
+}
+
+.card{
+  background:var(--c1);
+  padding:25px;
+  border-radius:16px;
+  text-align:center;
+  box-shadow:0 6px 20px rgba(0,0,0,.08);
+  transition:.3s;
+}
+
+.card:hover{transform:translateY(-5px);}
+
+.card i{font-size:30px;color:var(--c4);margin-bottom:10px;}
+
+footer{
+  background:var(--c2);
+  padding:25px;
+  text-align:center;
+  transition:.5s;
+}
+
+footer.dark{background:#222; color:#E5E5E5;}
+
+.socials a{margin:0 10px; font-size:20px;}
+.socials a:hover{color:var(--c4);}
+
+input, textarea{
+  width:100%; padding:12px; margin:6px 0 12px; border-radius:8px; border:1px solid #ccc;
+}
+
+.dark input, .dark textarea{background:#333; color:#E5E5E5; border:1px solid #555;}
+
+button.submit-btn{
+  background:var(--c3);
+  border:none;
+  padding:12px 25px;
+  border-radius:25px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+button.submit-btn:hover{background:var(--c4); color:#fff;}
+
+.theme-toggle{
+  cursor:pointer;
+  padding:8px 12px;
+  border-radius:12px;
+  background:var(--c4);
+  font-weight:600;
+  margin-left:10px;
+}
+</style>
+</head>
+<body>
+
+<header id="header">
+  <h2>Portfolio</h2>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <span class="theme-toggle" onclick="toggleTheme()">🌙</span>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero" data-aos="fade-up">
+  <h1>Hello, I'm <span>Abul Khair</span></h1>
+  <p>Professional Python & Django Developer</p>
+  <a href="cv.pdf" class="btn" download>Download CV</a>
+  <a href="#contact" class="btn">Hire Me</a>
+</section>
+
+<!-- ABOUT -->
+<section id="about" data-aos="fade-up">
+  <h2>About Me</h2>
+  <p style="max-width:700px;margin:auto;text-align:center">
+    I am a backend developer specializing in Python, Django, and REST APIs.
+    I build secure, scalable, and performance-focused web applications.
+  </p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" data-aos="fade-up">
+  <h2>Skills</h2>
+  <div class="card-box">
+    <div class="card"><i class="bi bi-code-slash"></i><h4>Python</h4></div>
+    <div class="card"><i class="bi bi-database"></i><h4>Django</h4></div>
+    <div class="card"><i class="bi bi-plug"></i><h4>REST API</h4></div>
+    <div class="card"><i class="bi bi-server"></i><h4>MySQL</h4></div>
+    <div class="card"><i class="bi bi-laptop"></i><h4>HTML & CSS</h4></div>
+    <div class="card"><i class="bi bi-android2"></i><h4>Android</h4></div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" data-aos="fade-up">
+  <h2>Projects</h2>
+  <div class="card-box">
+    <div class="card">
+      <h4>Django Web App</h4>
+      <p>Authentication, CRUD, Admin Panel</p>
+    </div>
+    <div class="card">
+      <h4>REST API</h4>
+      <p>Secure API with JWT</p>
+    </div>
+    <div class="card">
+      <h4>Automation Tool</h4>
+      <p>Python based automation scripts</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" data-aos="fade-up">
+  <h2>Contact</h2>
+  <form id="contact-form" style="max-width:500px;margin:auto;">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit" class="submit-btn">Send Message</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2025 Abul Khair</p>
+  <div class="socials" style="margin-top:10px;">
+    <a href="https://github.com/AkSoftwareSolution/" target="_blank" style="margin-right:15px; color:#ec4899; font-size:20px;">
+      <i class="bi bi-github"></i>
+    </a>
+    <a href="https://www.facebook.com/md.abul.khair.32571" target="_blank" style="margin-right:15px; color:#3b5998; font-size:20px;">
+      <i class="bi bi-facebook"></i>
+    </a>
+    <a href="https://wa.me/8801883906821" target="_blank" style="margin-right:15px; color:#25D366; font-size:20px;">
+      <i class="bi bi-whatsapp"></i>
+    </a>
+  </div>
+</footer>
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init();
+
+function toggleTheme(){
+  document.body.classList.toggle('dark');
+  document.getElementById('header').classList.toggle('dark');
+  document.querySelector('footer').classList.toggle('dark');
+}
+
+// Dummy contact form
+document.getElementById('contact-form').addEventListener('submit', function(e){
+  e.preventDefault();
+  alert('Form submitted! (backend required to actually send email)');
+});
+</script>
+
+</body>
+</html>
